@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="/js/joinscroll.js"></script>
+    <link rel="stylesheet" href="/plugins/swiper/swiper.min.css">
+    <script src="/plugins/swiper/swiper.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+</head>
+
+<style>
+    .dateTime {
+        text-align: center;
+    }
+
+    .flatpickr-calendar {
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .column {
+        margin: 0 10px; 
+        
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div class="column">
+        <label for="start-date">예약 시작일 : </label>
+        <input id="start-date" class="form-control dateTime" type="datetime-local" required />
+    </div>
+    <div class="column">
+        <label for="end-date">예약 종료일 : </label>
+        <input id="end-date" class="form-control dateTime" type="datetime-local" required />
+    </div>
+</div>
+</body>
+
+
+
+<script>
+    flatpickr.localize(flatpickr.l10ns.ko);
+    const today = new Date().setHours(0, 0, 0, 0)
+
+    config = {
+        enableTime: true,
+        dateFormat: "Y-m-d H시 i분",
+        altInput: true,
+        altFormat: "Y-m-d H시 i분",
+        dateFormat: "Y-m-d H시 i분",
+        time_24hr: true,
+        disable: [
+            function (date) {
+                return (date.getDay() === 0 || date.getDay() === 6);
+            }
+        ],
+        local: 'ko',
+        minDate: today,
+        minuteIncrement: 30,
+        minTime: "09:00",
+        maxTime: "18:00",
+        defaultHour: "09",
+        defaultMinute: "00",
+        inline: true,
+    }
+
+    flatpickr("#start-date", config);
+    flatpickr("#end-date", config);
+</script>
+
+</html>

@@ -1,0 +1,388 @@
+/************************** 폰트 설정 **************************/
+@font-face { 
+	font-family: 'Nanum';
+	src: url('../font/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face { 
+	font-family: 'Icecream_en';
+	src: url('../font/Pacifico-Regular.ttf') format('truetype');
+}
+@font-face { 
+	font-family: 'Satisfy_en';
+	src: url('../font/Satisfy-Regular.ttf') format('truetype');
+}
+/************************************************************/
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+	font-family: 'Nanum';
+	background-color: #f9f9f9;
+}
+.filter-item > .about > .home-left table, th, td {
+	text-align: left;
+	line-height: 2;
+}
+/************************************************************
+						S T A R T
+************************************************************/
+/********************************
+		s	l	i	d	e
+*/
+.swiper-container{
+	width:737px;
+	height:403px;
+	margin-top:30px;
+	float:left;
+}
+/*******************************
+			H O M E
+								*/
+.section1-container {
+	width: 960px;
+	margin: 0 auto;
+	
+	clear: both;
+}
+.filter-menu {
+	text-align: center;
+}
+.filter-menu li {
+    display: inline-block;
+	padding: 45px 45px 45px 45px;
+	cursor: pointer;
+}
+/*
+		current : 클릭 시 유지 
+										*/
+.filter-menu li:hover,
+.filter-menu li.current {
+    color: #bbb;
+	border-bottom: 2px solid #bbb;
+}
+/**************************************/
+.filter-item > .home {
+	clear: both;
+}
+
+.filter-item > .home  h1 { font-size:3.2em; font-family: '바탕체'; }
+.filter-item > .home  h2 { font-size:1em; font-family: 'Nanum'; }
+.filter-item > .home  h3 { font-size:0.94em; line-height: 1.9; font-family: 'Nanum'; }
+.filter-item > .home .rest { max-width: 35px; margin: 10px 0 0 0; }
+.filter-item > .home h3 span { border-left: 2px solid #bbb; padding-left: 10px; display: block; }
+
+
+.Damodiimg2 { 
+	width:100%;
+	animation: Damodiimg 0.7s ease-in-out 0s normal 1;
+}
+@keyframes Damodiimg {
+	0% {
+		margin-top: -100px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0px;
+		opacity: 1;
+	}
+}
+.filter-item > .home{
+	float: left; letter-spacing: 1.5px;
+	width: 50%;
+}
+.filter-item > .home > .home-left {
+	width: 50%;
+	float: left; letter-spacing: 0px;
+}
+.filter-item > .home > .home-right {
+	width: 50%;
+	text-align: right;
+	float: left; letter-spacing: 0px;
+}
+.gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+   .more-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   .image-wrapper {
+      width: 30%;
+      margin-bottom: 20px;
+   }
+
+   .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+   }
+
+   .line {
+      border-top: 1px solid darkgray;
+   }
+
+   .image-wrapper.zoomed img {
+      max-width: 70%;
+      max-height: 70%;
+      object-fit: contain;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      cursor: zoom-out;
+   }
+/*
+			H O M E, E N D
+**************************************/
+/*****************************************
+			D A M O D I-image
+										*/
+.Damodi-image { margin: 0 auto; text-align: center; }
+.Damodi-image > .dm-left { clear: both; padding-top: 30px; }
+.Damodi-image > .dm-left .dm-img { 
+	float: left; 
+	display: inline-block; 
+	width: 45%; 
+	box-shadow: 3px 7px 15px #ddd; 
+	cursor: pointer;
+}
+.dm-left-text { 
+	float: left; 
+	width: 50%; 
+	padding: 5px 0 0 46px;
+}
+.dm-left-text th { padding-right: 25px; }
+.dm-left-text td { padding-left: 10px; }
+/* 체크박스 숨기기 */
+#layer2-popup,
+#layer2-popup2,
+#layer2-popup3,
+#layer2-popup4,
+#layer2-popup5,
+#layer2-popup6,
+#layer2-popup7 { 
+	display: none;
+}
+/* 레이어 팝업 라벨디자인 및 연결 */
+#layer2-popup + label,
+#layer2-popup2 + label,
+#layer2-popup3 + label,
+#layer2-popup4 + label,
+#layer2-popup5 + label,
+#layer2-popup6 + label,
+#layer2-popup7 + label {
+	padding: 10px;
+	display: block;
+    color: #fff;
+}
+/* 팝업창 숨기기 */
+.damodiimg-1 { display: none; }
+/* 팝업창 나타내기 및 디자인 */
+#layer2-popup:checked + label + .dm-left-text + .damodiimg-1,
+#layer2-popup2:checked + label + .damodiimg-1,
+#layer2-popup3:checked + label + .dm-left-text + .damodiimg-1,
+#layer2-popup4:checked + label + .damodiimg-1,
+#layer2-popup5:checked + label + .dm-left-text + .damodiimg-1,
+#layer2-popup6:checked + label + .damodiimg-1 { 
+	position: absolute;
+	top: 0%; left: 0%;
+	display: block;
+
+	z-index: 999;
+	animation: damodi-img 0.7s ease-in-out 0s normal 1; 
+}
+	@keyframes damodi-img {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+.damodiimg-1 .dm-img-main {
+	position: fixed;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+}
+.damodiimg-1 .close {
+	position: fixed;
+	right: 0;
+	font-family: '나눔';
+	font-size: 2em;	font-weight: 900; color: white;
+	border: 1px solid #000; padding: 5px 10px 8px 10px; background-color: black;
+	cursor: pointer;
+}
+.damodiimg-1 .dm-img-main-height {
+	position: relative;
+	top: 0%; left: 25%;
+	transform: translate(0%, 0%);
+	width: 65%;
+}
+.damodiimg-1 .dm-img-main-height2 {
+	position: relative;
+	top:0%; left: 0%; 
+	transform: translate(0%, 0%);
+	width: 80%;
+}
+/*
+		D A M O D I-image, E N D
+*****************************************/
+/*****************************************
+			R E S E R V A T I O N
+										*/
+    .Reservation2 {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .Reservation2 th, .Reservation2 td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    .Reservation2 th {
+        background-color: rgb(211, 233, 208);
+    }
+
+    .Reservation2 th[colspan="2"] {
+        text-align: center;
+    }
+
+    .Reservation2 th[color="brown"], .Reservation2 td[color="brown"] {
+        color: brown;
+    }
+
+    .Reservation2 b[color="brown"] {
+        color: brown;
+    }
+
+    .Reservation2 b[color="red"] {
+        color: red;
+    }
+
+
+
+	.ReservationButton button {
+        display: inline-block;
+        padding: 16px 32px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #e5f0e6;
+        color: rgb(5, 5, 5);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .ReservationButton button:hover {
+        background-color: #45a049;
+    }
+/*
+		R E S E R V A T I O N, E N D
+*****************************************/
+
+
+/*******************************
+			N E A R
+								*/
+.nearby { margin: 0 auto; text-align: center; }
+.nearby > .nr-left { clear: both; padding-top: 30px; }
+.nearby > .nr-left .nr-img { 
+	float: left; 
+	display: inline-block; 
+	width: 45%; 
+	box-shadow: 3px 7px 15px #ddd; 
+	cursor: pointer;
+}
+.nr-left-text { 
+	float: left; 
+	width: 50%; 
+	padding: 25px 0 0 46px;
+}
+.nr-left-text th { padding-right: 25px; }
+.nr-left-text td { padding-left: 10px; }
+/* 체크박스 숨기기 */
+#layer4-popup,
+#layer4-popup2,
+#layer4-popup3 { 
+	display: none;
+}
+/* 레이어 팝업 라벨디자인 및 연결 */
+#layer4-popup + label,
+#layer4-popup2 + label,
+#layer4-popup3 + label {
+	padding: 10px;
+	display: block;
+    color: #fff;
+}
+/* 팝업창 숨기기 */
+.nearby-1 { display: none; }
+/* 팝업창 나타내기 및 디자인 */
+#layer4-popup:checked + label + .nr-left-text + .nearby-1,
+#layer4-popup2:checked + label + .nr-left-text +.nearby-1,
+#layer4-popup3:checked + label + .nr-left-text + .nearby-1 { 
+	position: absolute;
+	top: 0%; left: 0%;
+	display: block;
+
+	z-index: 999;
+	animation: nearby 0.7s ease-in-out 0s normal 1; 
+}
+	@keyframes nearby {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+.nearby-1 .nr-img-main {
+	position: fixed;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40%;
+}
+.nearby-1 .close {
+	position: fixed;
+	right: 0;
+	font-family: '나눔';
+	font-size: 2em;	font-weight: 900; color: white;
+	border: 1px solid #000; padding: 5px 10px 8px 10px; background-color: black;
+	cursor: pointer;
+}
+
+/*
+			N E A R, E N D
+*****************************************/
+
+/*
+				A B O U T
+*****************************************/
+.mail {
+	text-align: center;
+	margin: 0 auto;
+	
+	padding-top: 30px;
+}
+
+.filter-item > .contactr  h1 { font-size:3.2em; font-family: '바탕체'; }
+.filter-item > .contactr h2 { font-size:1em; font-family: 'Nanum'; }
+.filter-item > .contactr  h3 { font-size:0.94em; line-height: 1.9; font-family: 'Nanum'; }
+.filter-item > .contactr .rest { max-width: 35px; margin: 10px 0 0 0; }
+.filter-item > .contactr h3 span { border-left: 2px solid #bbb; padding-left: 10px; display: block; }
+
+
+/*
+			A B O U T, E N D
+*****************************************/

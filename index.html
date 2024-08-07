@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>다모디 파티룸</title>
+   
+   <link href="css/reset.css" rel="stylesheet" />
+   <link href="css/index.css" rel="stylesheet" />
+   <link href="css/filter-data.css" rel="stylesheet" />
+
+   <style>
+   .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+   .more-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   .image-wrapper {
+      width: 30%;
+      margin-bottom: 20px;
+   }
+
+   .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+   }
+
+   .line {
+      border-top: 1px solid darkgray;
+   }
+
+   .image-wrapper.zoomed img {
+      max-width: 70%;
+      max-height: 70%;
+      object-fit: contain;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      cursor: zoom-out;
+   }
+   </style>
+   
+   <script>
+   function toggleImageZoom(img) {
+      img.parentElement.classList.toggle('zoomed');
+   }
+
+   function showMoreImages() {
+      var gallery = document.getElementById('image-gallery');
+      var images = gallery.querySelectorAll('.image-wrapper');
+
+      for (var i = 0; i < images.length; i++) {
+         images[i].style.display = 'block';
+      }
+
+      document.getElementById('show-more-btn').style.display = 'none';
+   }
+      </script>
+</head>
+<body>
+   <script>
+      function showMoreImages() {
+        var moreImages = document.querySelector('.more-images');
+        var showMoreBtn = document.getElementById('show-more-btn');
+      
+        if (moreImages.style.display === 'none') {
+         moreImages.style.display = 'flex';
+         showMoreBtn.textContent = '접기';
+        } else {
+         moreImages.style.display = 'none';
+         showMoreBtn.textContent = '더보기';
+        }
+      }
+      </script>
+   
+   <section>
+		<div class="section1-container">
+         
+			<ul class="filter-menu">
+			  <li id="menu" data-target="home">Home
+		 	  </li><li data-target="Damodi-image">Image
+		 	  </li><li data-target="Reservation">Reservation
+		 	  </li><li data-target="nearby">Nearby tourism
+		 	  </li><li data-target="contact">About</li>
+			</ul>
+         
+         <div class="filter-item">
+            <div class="home" data-item="home">
+                  <img class="Damodiimg2" src="img/damodiimain.jpg" alt="Damodiimg" />
+
+               <h3>
+                  <br>
+               <div class="home" >
+                  <img class='rest' src='img/rest.png' alt='rest' /><br>
+                  <P style="font-size: 1.5em ;"><b>당신의 소중한 순간들을 위해 다모디 파티룸이 함께 합니다.</b>🥰</P>
+                  <h2>우리는 고객님들께 <b>특별한</b> 순간을 만들어 드리고자 합니다. 그 특별함은 고객님께서 원하는 대로 커스터마이징하여 만들어집니다.<br> 최신시설과 장비를 갖추어 
+                     편안하게 이용 할 수 있도록 합니다. 또한 고객님들의 취향과 성격에 맞게 파티룸을 꾸밀 수 있습니다.🥂🍇 </h2><br>
+                  <h2>우리는 단순한 파티룸이 아닌, 고객님과 함꼐하는 특별한 순간을 만들어 드립니다.<br>생일, 동호회모임, 세미나 등 어떤 행사든지, <b>다모디 파티룸</b>과 함께라면 더욱 특별하고 소중한 추억이 될 것 입니다❣️</h2><br>
+                  <h2>다모디 파티룸에서는 개성 있는 테마별 파티를 즐길 수 있으며, 세심한 서비스와 놀라운 디테일들이 더해져 참석한 모든 사람들이 
+                  행복한 추억을 만들게 됩니다.🎤🎬📺 <br><br>도시의 소음 속에서도 다모디 파티룸은 평온하고 아름다운 공간으로,
+                  잠시나마 도시에서 벗아나 즐길 수 있는 특별한 장소 입니다.🏁</h2>
+               </div>
+               </h3>
+
+			   <br><br><br><br>
+               <ul style="display: flex; align-items: center;">
+                  <li style="font-size: 1.5em; text-decoration: underline; flex: 1;">이미지 갤러리</li>
+                  <div class="show-more-btn" style="display: flex;">
+                    <span onclick="showMoreImages()" id="show-more-btn">더보기 ></span>
+                  </div>
+                 </ul>
+               
+               <div class="line"></div>
+
+               <br><br>
+
+
+
+               
+               <div class="gallery">
+                  <div class="image-wrapper">
+                     <img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+                    <img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                     
+                     <div class="image-wrapper">
+                        <img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                     </div>
+                  </div>
+				 
+                  <!-- 추가 이미지 -->
+                     <!-- 더보기 버튼을 클릭하면 나타날 추가 이미지들 -->
+                  <div class="more-images" style="display: none;">
+                     <div class="image-wrapper">
+						<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  <div class="image-wrapper">
+					<img src="img/damodi2.png" alt="Image 1" onclick="toggleImageZoom(this)">
+                  </div>
+                  
+				  
+
+      <!-- 추가 이미지들을 여기에 추가합니다 -->
+
+
+               </div>      
+            </div>  
+
+               <!----------------------------------------------
+               -
+               -               MENU 2 
+               -               
+               ------------------------------------------------>
+					<div class="Damodi-image" data-item="Damodi-image">
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="dm-left">
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer2-popup">
+							<label for="layer2-popup">
+									<img class="dm-img" src="img/damodiimg.jfif" alt="다모디 쇼파" />
+									
+							</label>
+							<div class="dm-left-text">
+								
+								</table>
+								<p style="text-align: left; font-size: 1em; letter-spacing: 1px;">
+									<br>
+									<span style="font-size: 1.3em;"><b>따뜻한 분위기를 가진 다모디 파티룸 입니다.</b></span>
+									<br><br>
+									<br><br>친구나 가족과 큰 창문이 있는 다모디 파티룸에서 도시를 배경으로 추억을 남겨보세요.🌃👨‍👩‍👧‍👦
+								</p>
+							</div>
+							
+							<div class="damodiimg-1">
+								<img class="dm-img-main" src="img/damodiimg.jfif" alt="image" />
+									<label for="layer2-popup">
+										<span class="close">X</span>
+									</label>
+								</div>
+						</div>
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="dm-left">
+							<div class="dm-left-text">
+								<br><br>
+								<table>
+									<tr>
+										<td>
+											<p style="text-align: left; font-size: 1.3em;"><b>이렇게 채광 좋은 파티룸 보셨나요?🌞</b></p><br>
+											자연광 사진이 사람을 가장 예뻐 보이게 한답니다. <br>가장 아름다운 시절의 사진을 남겨보세요
+										</td>
+										
+									</tr>
+									<tr>
+									
+								</table>
+							</div>
+							
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer2-popup2">
+							<label for="layer2-popup2">
+									
+									<img class="dm-img" src="img/damodishopa.PNG" alt="image "/>
+							</label>
+							
+							
+							<div class="damodiimg-1">
+								<img class="dm-img-main" src="img/damodishopa.PNG" alt="image" />
+									<label for="layer2-popup2">
+										<span class="close">X</span>
+									</label>
+								</div>
+						</div>
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="dm-left">
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer2-popup3">
+							<label for="layer2-popup3">
+								<img class="dm-img" src="img/damodiimg2.jpg" alt="image" />
+							</label>
+							<div class="dm-left-text">
+								<table>
+									<tr>
+										<td>
+											
+											<p style="text-align: left; font-size: 1.5em;"><b>꽃이 가득한 다모디 파티룸에서 추억을 남겨보세요. 🌸🌞</b></p><br>
+										</td>
+									</tr>
+									<tr>
+									
+								</table>
+							</div>
+							
+							<div class="damodiimg-1">
+							<img class="dm-img-main" src="img/damodiimg2.jpg" alt="image" />
+								<label for="layer2-popup3">
+									<span class="close">X</span>
+								</label>
+							</div>
+						</div>
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="dm-left">
+							<div class="dm-left-text">
+								<table>
+									<br><br>
+									<tr>
+										
+										<td><p style="text-align: left; font-size: 1.3em;">
+										<b>다모디 파티룸의 알록달록한 귀여운 슬리퍼!</b></p>
+										<br>
+										사이즈 별로 구비되어 있으니 걱정마세요.<br>
+										몇명이 와도 끄떡없습니다.<br><br></td>
+									
+									</tr>
+									<tr>
+										
+										<td>
+											색깔별로 팀원을 구성하여 미니게임을 진행해보세요!🤪
+										</td>
+									</tr>
+								</table>
+							</div>
+							
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer2-popup4">
+							<label for="layer2-popup4">
+									<img class="dm-img"style="width: 450px;" src="img/img_1.JPG" alt="image" />
+							</label>
+
+							<div class="damodiimg-1">
+								<img class="dm-img-main" style="width: 600px;" src="img/img_1.JPG" alt="image" />
+									<label for="layer2-popup4">
+										<span class="close">X</span>
+									</label>
+								</div>
+						</div>
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="dm-left">
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer2-popup5">
+							<label for="layer2-popup5">
+									<img class="dm-img" src="img/img_3.jpg" alt="image" />
+							</label>
+							<div class="dm-left-text">
+								<table>
+									<tr>
+										<br><br>
+										<td><p style="text-align: left; font-size: 1em;"><b>🎉🎁🎈 생일 파티룸 최고의 장소로 초대합니다! 🎉🎁🎈</b></p>
+											<br><br> 
+											🎉 생일을 맞이하여 파티룸에서 최상의 장소를 제공해드립니다! 🎉<br>
+											당신의 특별한 날을 더욱 특별하게 만들어 드리기 위해 우리 파티룸은 준비가 완벽합니다.<br> 우리 파티룸은 편안하고 현대적인 분위기를 자랑하며, 당신과 소중한 친구, 가족들이 최고의 시간을 보낼 수 있는 공간을 제공합니다.</td>
+									</tr>
+								</table>
+							</div>
+							
+							<div class="damodiimg-1">
+							<img class="dm-img-main" style="width: 600px;"  src="img/img_3.jpg" alt="image" />
+								<label for="layer2-popup5">
+									<span class="close">X</span>
+								</label>
+							</div>
+						</div>
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="dm-left">
+							<div class="dm-left-text">
+								<table>
+									<tr>
+										<br><br>
+										<td><p style="text-align: left; font-size: 1.3em;"><b>예쁜 컵들이 가득한 다모디 파티룸 입니다!</b></p>
+											<br><br> 
+											점점 더워지는 날씨입니다~🌞<br>
+											친구들과 시원한 아이스 아메리카노 한잔 어떤가요?🥤</td>
+									</tr>
+									
+								</table>
+							</div>
+							
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer2-popup6">
+							<label for="layer2-popup6">
+									<img class="dm-img" src="img/img_2.JPG" alt="image" />
+							</label>
+							
+							<div class="damodiimg-1">
+							<img class="dm-img-main" style="width: 600px;" src="img/img_2.JPG" alt="image" />
+								<label for="layer2-popup6">
+									<span class="close">X</span>
+								</label>
+							</div>
+						</div>
+					</div>		
+				<!----------------------------------------------
+               -
+               -               MENU 3 
+               -               
+               ------------------------------------------------>
+			   
+               <div class="Reservation" data-item="Reservation">
+				<!--
+				C S S 팝 업 창
+				-->
+				<div class="Reservation1">
+					
+				   <br><br>
+				   <pre ><b>다모디 파티룸  >  예약하기</b></pre><br><br>
+				  
+				   
+				   <table class="Reservation2">
+					<tr>
+						<th colspan="2">다모디 파티룸 예약 및 요금</th>
+					</tr>
+					<tr>
+						<td><b>기본 요금 :</b> 4인~9인/3시간 6만원(<b color="brown">시간 추가시 3만원/ 10분 초과시 1시간 이용으로 간주합니다.)</b> 3시간 6만원</td>
+					</tr>
+					<tr>
+						<td><b>이용 시간 :</b> 연중무휴</td>
+					</tr>
+					<tr>
+						<td color="brown"><b>예약 :</b> 예약은 선결제 입니다.</td>
+						
+					</tr>
+					<tr>
+						<td><b style="color: brown;">환불 규정:</b> 10일전 100% 환불, 9일전 80% 환불, 8일전 70% 환불 ,6일전 환불 불가 ,7일전 부터 예약일 변겅 불가</td>
+					</tr>
+					<tr>
+						<td><b color="brown">청소 :</b> 설거지와 물건 정리, 전원 끄기, 분리수거 필수 입니다. <b color="brown">불 이행시 청소비 3만원</b>이 보증급에서 청구 됩니다. 청소대행비는 3만원 입니다.</td>
+					</tr>
+					<tr>
+						<th color="brown"><b color="red">*보증금 5만원</b>있습니다. 다음날 시설 확인 후 환불해 드립니다.</th>
+					</tr>
+				</table>
+				  
+				   <br><br>
+				   <img class="dm-img-main" style="width:100%;" src="img/homeimg7.jpg" alt="image" /><br><br>
+				   <p style="text-align: center; font-size: 1.5em;"><b>아래 예약하기 버튼을 클릭하여 원하시는 날짜와 시간을 선택해보세요!</b></p><br>
+				   
+				   <div class="ReservationButton">
+					  <button onclick="redirectToCC()"  >예약하기</button>
+					</div>
+				</div>
+			</div>
+					<!----------------------------------------------
+					-
+					-					MENU 4 
+					-					
+					------------------------------------------------>
+					<div class="nearby" data-item="nearby">
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="nr-left">
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer4-popup">
+							<label for="layer4-popup">
+									<img class="nr-img" src="img/near1.png"/>
+							</label>
+							<div class="nr-left-text">
+								<table>
+									<tr>
+										<th>이름: </th>
+										<td>"Jikjisa Temple"</td>
+									</tr>
+									<tr>
+										<th>장소: </th>
+										<td>경북 김천시 대항면 직지사길 95</td>
+									</tr>
+									<tr>
+										<th>입장료:</th>
+										<td>어른 2,500원</td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>청소년 1,500원</td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>어린이 1,000원</td>
+									</tr>
+									<tr>
+										<th>주차 요금:</th>
+										<td>무료</td>
+									</tr>
+									<tr>
+										<th>오시는 길:</th>
+										<td><img class="nr-img1" src="img/J.PNG" width="300px" height="200px"></td>
+									</tr>
+									<tr>
+										<th>자세한사항:</th>
+										<td><a href="http://www.jikjisa.or.kr/">직지사홈페이지</a></td>
+									</tr>
+									
+								</table>
+							</div>
+							
+							<div class="nearby-1">
+							<img class="nr-img-main" src="img/near1.png"/>
+								<label for="layer4-popup">
+									<span class="close">X</span>
+								</label>
+							</div>
+						</div>
+						
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="nr-left">
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer4-popup2">
+							<label for="layer4-popup2">
+									<img class="nr-img" src="img/near2.jpg" />
+							</label>
+							<div class="nr-left-text">
+								<table>
+									<tr>
+										<th>이름: </th>
+										<td>"Yeonhwaji"</td>
+									</tr>
+									<tr>
+										<th>소개:</th>
+										<td>벗꽃 명소로 데이트하기 좋은 둘레길</td>
+									</tr>
+									<tr>
+										<th>주차장:</th>
+										<td>공영주차장 또는 맞은편 음식점 주차장</td>
+									</tr>
+									<tr>
+										<th>장소:</th>
+										<td>경북 김천시 교동 820-2</td>
+									</tr>
+									<tr>
+										<th>오시는 길: </th>
+										<td><img src="img/Y.png" width="300px" height="200px"></td>
+									</tr>
+									<tr>
+										<th>자세한사항:</th>
+										<td><a href="https://m.blog.naver.com/kayak71/222692186596?isInf=true">개인블로그</a></td>
+									</tr>
+								</table>
+							</div>
+							<div class="nearby-1">
+							<img class="nr-img-main" src="img/near2.jpg" />
+								<label for="layer4-popup2">
+									<span class="close">X</span>
+								</label>
+							</div>
+						</div>
+						
+						<!--
+						C S S 팝 업 창
+						-->
+						<div class="nr-left">
+							<!-- 체크박스 이미지 감싸기 -->
+							<input type="checkbox" id="layer4-popup3">
+							<label for="layer4-popup3">
+									<img style="width: 425px; height: 600px;" class="nr-img" src="img/near5.jpg" />
+							</label>
+							<div class="nr-left-text">
+								<table>
+									<tr>
+										<th>이름: </th>
+										<td>"Natural Farm"</td>
+									</tr>
+									<tr>
+										<th>소개:</th>
+										<td>샤인머크켓 재배 채험</td>
+									</tr>
+									<tr>
+										<th>체험 비용:</th>
+										<td>1인 3만원</td>
+									</tr>
+									<tr>
+										<th>준비물:</th>
+										<td>장화, 포도 담을 통</td>
+									</tr>
+									<tr>
+										<th>장소:</th>
+										<td>경상북도 김천시 남면 옥산리 628</td>
+									</tr>
+									<tr>
+										<th>오시는 길: </th>
+										<td><img src="img/S.png" width="300px" height="200px"></td>
+									</tr>
+									<tr>
+										<th>자세한사항:</th>
+										<td><a href="https://blog.naver.com/podo-daddy">농원블로그</a></td>
+									</tr>
+								</table>
+							</div>
+							
+							<div class="nearby-1">
+							<img class="nr-img-main" src="img/near5_1.jpg"/>
+								<label for="layer4-popup3">
+									<span class="close">X</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					
+					<!----------------------------------------------
+					-
+					-					MENU 5 
+					-					
+					------------------------------------------------>
+					<div class="contact" data-item="contact">
+					<div class="mail" >
+					E-Mail : pphj1817@naver.com<br>
+					Phone : 010-7769-8830<br><br>
+					</div>
+					<img style="width: 100%;" src='img/damodi3.jpg' alt='Damodiimg' /><br><br>
+					<br>
+					<h3 style="font-size:2em;  ">🤚 오시는 길: 경북 김천시 시청로 95. (상가동 2층 205호 ).</h3><br>
+					<img style="width: 100%;" src="img/position.PNG" alt="profile" />
+					<p style="font-size:2em;  ">🤚파티룸 이용시 주의사항</p><br>
+				
+					<img style="width: 100%;" src='img/Damodi_precautions.png' alt='Damodiimg' />
+					ㅡ<br>
+					<h3  style="font-size:2em;">🤚이용 가격</h3><br>
+					<img style="width: 100%;" src='img/Price used.jpg' alt='Damodiimg' />
+				
+					<br>
+					</div>
+					
+				</div>
+				<script src="js/filter.js"></script>
+			</div>
+	</body>
+<script>
+	document.getElementById("menu").click();
+</script>
+</html>
